@@ -22,10 +22,48 @@ pip install pyserial
 ## Software
 #### on_off_by_ping.zsh
 This might be sufficient for your purpose and is a stand alone shell script. I prefere the service implementation below. It has a hard-coded path to the USB Relay, checks for successful ping and turns on the lamp (Relay on/off/on/off) and if ping timeout it turns off the lamp (Relay on/off)
-#### Service
-The service makes sure pinglamp.py starts at boot
 #### main
 pinglamp.py is the main software. It first determines the path to the device and after that it checks internet connection by ping, similar as on_off_by_ping.zsh above
+##### installing pinglamp.py
+```sudo apt update```
+
+```sudo apt upgrade```
+
+```sudo apt install python3 python3-pip```
+
+```sudo pip3 install ping3```
+
+- edit pinglamp.py with ```nano down_detector.py``` . 
+
+Note that you have to customize 3 lines: 
+sender_email = "YOURSENDER@gmail.com", 
+sender_password = "HERE_GOES_YOUR_GMAIL_PASSWORD_OR_APP_PASSWORD" &
+receiver_email = "YOURRECIEVER@gmail.com"
+
+- Run the script (you can chose just to run it och have it automatically run when the Pi boots)
+
+
+```python3 pinglamp.py```
+#### Service
+The service makes sure pinglamp.py starts at boot
+##### installing service
+- Setup to run as a service from boot (If you want to have it running automatically from boot)
+
+```sudo nano /etc/systemd/system/down_detector.service```
+
+Note that you have to customize following lines: ExecStart=/usr/bin/python3 /home/YOURUSER/pinglamp.py
+WorkingDirectory=/home/YOURUSER, 
+StandardOutput=inherit, 
+StandardError=inherit, 
+Restart=always, 
+User=YOURUSER
+
+- Enable the service & Reboot
+
+```sudo systemctl enable pinglamp.service```
+
+```sudo reboot```
+Or enable & start service if you like
 ## Circuit Diagram
 The USB relay did not fit with USB cable attached so I decided to solder the cable directly on the PCB
 NOTE! If you decide to drill a hole in the lamp, don't forget to pull it through BEFORE you solder
