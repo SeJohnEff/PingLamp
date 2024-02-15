@@ -35,15 +35,6 @@ pinglamp.py is the main software. It first determines the path to the device and
 
 - edit pinglamp.py with ```nano down_detector.py``` . 
 
-Note that you have to customize 3 lines: 
-sender_email = "YOURSENDER@gmail.com", 
-sender_password = "HERE_GOES_YOUR_GMAIL_PASSWORD_OR_APP_PASSWORD" &
-receiver_email = "YOURRECIEVER@gmail.com"
-
-- Run the script (you can chose just to run it och have it automatically run when the Pi boots)
-
-
-```python3 pinglamp.py```
 #### Service
 The service makes sure pinglamp.py starts at boot
 ##### installing service
