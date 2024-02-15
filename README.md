@@ -4,16 +4,8 @@ A design that turns on a lamp (Hazard Flash Lamp) when ping is successful
 The design idea is to have a visual confirmation when a devive moving into a wireless network gets internet access.
 Ping to 8.8.8.8 is done from the device
 A USB relay is activated if ping is successful and deactivated at timeout.
-A strobe light is connected via the relay
+A strobe light is connected via the relay, that replaces the button on the lamp
 
-
-Please make sure to install the ping3 library if you haven't already by running:
-
-
-pip install ping3
-Additionally, ensure that you have the appropriate serial communication libraries installed, such as pyserial, which can be installed via:
-
-pip install pyserial
 
 ## Hardware:
 - A NUC running Ubuntu (or any harware at your choice)
@@ -33,6 +25,7 @@ pinglamp.py is the main software. It first determines the path to the device and
 ```sudo apt install python3 python3-pip```
 
 ```sudo pip3 install ping3```
+```pip install pyserial```
 
 - edit pinglamp.py with ```nano pinglamp.py``` . 
 
