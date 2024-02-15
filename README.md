@@ -33,14 +33,14 @@ pinglamp.py is the main software. It first determines the path to the device and
 
 ```sudo pip3 install ping3```
 
-- edit pinglamp.py with ```nano down_detector.py``` . 
+- edit pinglamp.py with ```nano pinglamp.py``` . 
 
 #### Service
 The service makes sure pinglamp.py starts at boot
 ##### installing service
 - Setup to run as a service from boot (If you want to have it running automatically from boot)
 
-```sudo nano /etc/systemd/system/down_detector.service```
+```sudo nano /etc/systemd/system/pinglamp.service```
 
 Note that you have to customize following lines: ExecStart=/usr/bin/python3 /home/YOURUSER/pinglamp.py
 WorkingDirectory=/home/YOURUSER, 
