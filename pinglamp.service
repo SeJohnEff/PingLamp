@@ -1,0 +1,15 @@
+# This service is licensed under the Creative Commons CC0 1.0 Universal License.
+[Unit]
+Description=PingLamp
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 /home/YOURUSER/pinglamp.py
+WorkingDirectory=/home/YOURUSER
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=YOURUSER
+
+[Install]
+WantedBy=multi-user.target
