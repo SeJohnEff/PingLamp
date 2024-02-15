@@ -20,6 +20,7 @@ pip install pyserial
 - Warning Flashing Light: [amazon.se](https://www.amazon.se/-/en/dp/B07FP3WT89?ref=ppx_yo2ov_dt_b_product_details&th=1). Built in battery and a button. Press 1=flash 2=steady light 3=off and back to flash if you press again. The button will be replaced by the relay
 - USB relay card: [amazon.se](https://www.amazon.se/dp/B07DJ549LX?psc=1&ref=ppx_yo2ov_dt_b_product_details). An USB to serial design with an MCU. The MCU receives the serial communication, decodes it and controls the relay. You send a string to it and relay goes on or off
 ## Software
+You have 2 options to select software depending on your needs. A zsh script or a service that runs a python code. Choose the one you like
 #### on_off_by_ping.zsh
 This might be sufficient for your purpose and is a stand alone shell script. I prefere the service implementation below. It has a hard-coded path to the USB Relay, checks for successful ping and turns on the lamp (Relay on/off/on/off) and if ping timeout it turns off the lamp (Relay on/off)
 #### pinglamp.py
