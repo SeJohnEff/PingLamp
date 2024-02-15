@@ -28,4 +28,4 @@ pip install pyserial
 ![USB cables soldered](/assets/usb_cables_soldered.jpg)
 ![Lamp](/assets/lamp_pcb_button.jpg)
 ![Lamp PCB](/assets/lamp_pcb.jpg)
-![Lamp,disassembled](/assets/lamp_disasssembled.jpg)
+![Lamp,disassembled](/assets/lamp_disassembled.jpg)
