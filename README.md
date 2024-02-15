@@ -23,6 +23,7 @@ pip install pyserial
 #### on_off_by_ping.zsh
 This might be sufficient for your purpose and is a stand alone shell script. I prefere the service implementation below. It has a hard-coded path to the USB Relay, checks for successful ping and turns on the lamp (Relay on/off/on/off) and if ping timeout it turns off the lamp (Relay on/off)
 #### Service
+The service makes sure main.py starts at boot
 #### main
 ## Circuit Diagram
 The USB relay did not fit with USB cable attached so I decided to solder the cable directly on the PCB
