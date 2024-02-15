@@ -1,3 +1,4 @@
+# This service is licensed under the Creative Commons CC0 1.0 Universal License.
 import subprocess
 import time
 import ping3
