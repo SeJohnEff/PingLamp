@@ -22,7 +22,7 @@ pip install pyserial
 ## Software
 #### on_off_by_ping.zsh
 This might be sufficient for your purpose and is a stand alone shell script. I prefere the service implementation below. It has a hard-coded path to the USB Relay, checks for successful ping and turns on the lamp (Relay on/off/on/off) and if ping timeout it turns off the lamp (Relay on/off)
-#### main
+#### pinglamp.py
 pinglamp.py is the main software. It first determines the path to the device and after that it checks internet connection by ping, similar as on_off_by_ping.zsh above
 ##### installing pinglamp.py
 ```sudo apt update```
