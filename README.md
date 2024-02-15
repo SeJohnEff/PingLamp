@@ -25,6 +25,8 @@ pip install pyserial
 #### Service
 #### main
 ## Circuit Diagram
+The USB relay did not fit with USB cable attached so I decided to solder the cable directly on the PCB
+NOTE! If you decide to drill a hole in the lamp, don't forget to pull it through BEFORE you solder
 ![](/assets/diagram.jpg)
 ## Images
 ![USB Relay board](/assets/usb_relay.jpg)
