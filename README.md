@@ -25,3 +25,5 @@ pip install pyserial
 ![](/assets/diagram.jpg)
 ## Images
 ![USB Relay board](/assets/usb_relay.jpg)
+![USB cables soldered](/assets/usb_cables_soldered.jpg)
+
