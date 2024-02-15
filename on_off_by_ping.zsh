@@ -1,4 +1,5 @@
 #!/bin/zsh
+# This service is licensed under the Creative Commons CC0 1.0 Universal License.
 #zsh script made for mac
 #will work on Linux
 
