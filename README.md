@@ -20,8 +20,8 @@ pip install pyserial
 - Warning Flashing Light. I picked this: [amazon.se](https://www.amazon.se/-/en/dp/B07FP3WT89?ref=ppx_yo2ov_dt_b_product_details&th=1)
 - USB relay card: [amazon.se](https://www.amazon.se/dp/B07DJ549LX?psc=1&ref=ppx_yo2ov_dt_b_product_details)
 ## Software
-- on_off_by_ping.zsh: This might be sufficient for your purpose
-- software package
+#### on_off_by_ping.zsh
+This might be sufficient for your purpose and is a stand alone shell script. I prefere the service implementation below
 #### Service
 #### main
 ## Circuit Diagram
