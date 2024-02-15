@@ -1,7 +1,10 @@
 import subprocess
 import time
-import os
+import ping3
 import serial.tools.list_ports
+
+# Define the device path
+DEVICE = "/dev/cu.usbserial-1240"
 
 # Function to turn the lamp on
 def turn_lamp_on(device):
