@@ -7,22 +7,22 @@ import serial.tools.list_ports
 # Function to turn the lamp on
 def turn_lamp_on(device):
     # Switch the relay on and off twice to turn the lamp on
-    with open(device, "w") as dev:
-        dev.write(b"\xA0\x01\x01\xA2")
+    with open(device, "wb") as dev:
+        dev.write(b"\xA0\x01\x01\xA2\10\13")
         time.sleep(0.1)
-        dev.write(b"\xA0\x01\x00\xA1")
+        dev.write(b"\xA0\x01\x00\xA1\10\13")
 
 # Function to turn the lamp off
 def turn_lamp_off(device):
     # Switch the relay on and off once to turn the lamp off
     with open(device, "w") as dev:
-        dev.write(b"\xA0\x01\x01\xA2")
+        dev.write(b"\xA0\x01\x01\xA2\10\13")
         time.sleep(0.1)
-        dev.write(b"\xA0\x01\x00\xA1")
+        dev.write(b"\xA0\x01\x00\xA1\10\13")
         time.sleep(0.1)
-        dev.write(b"\xA0\x01\x01\xA2")
+        dev.write(b"\xA0\x01\x01\xA2\10\13")
         time.sleep(0.1)
-        dev.write(b"\xA0\x01\x00\xA1")
+        dev.write(b"\xA0\x01\x00\xA1\10\13")
 
 # Function to check internet connectivity
 def check_internet():
