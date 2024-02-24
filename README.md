@@ -59,3 +59,18 @@ NOTE! If you decide to drill a hole in the lamp, don't forget to pull it through
 ![Lamp](/assets/lamp_pcb_button.jpg)
 ![Lamp PCB](/assets/lamp_pcb.jpg)
 ![Lamp,disassembled](/assets/lamp_disassembled.jpg)
+
+## useful tool
+```usb-devices```
+
+
+T:  Bus=02 Lev=01 Prnt=01 Port=00 Cnt=01 Dev#= 15 Spd=12  MxCh= 0
+D:  Ver= 1.10 Cls=ff(vend.) Sub=00 Prot=00 MxPS= 8 #Cfgs=  1
+P:  Vendor=1a86 ProdID=7523 Rev=02.64
+S:  Product=USB Serial
+C:  #Ifs= 1 Cfg#= 1 Atr=80 MxPwr=98mA
+I:  If#= 0 Alt= 0 #EPs= 3 Cls=ff(vend.) Sub=01 Prot=02 Driver=ch341
+E:  Ad=02(O) Atr=02(Bulk) MxPS=  32 Ivl=0ms
+E:  Ad=81(I) Atr=03(Int.) MxPS=   8 Ivl=1ms
+E:  Ad=82(I) Atr=02(Bulk) MxPS=  32 Ivl=0ms
+
