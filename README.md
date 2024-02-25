@@ -14,18 +14,15 @@ A strobe light is connected via the relay, that replaces the button on the lamp
 ## Software
 You have 2 options to select software depending on your needs. A zsh script or a service that runs a python code. Choose the one you like
 #### on_off_by_ping.zsh
-This might be sufficient for your purpose and is a stand alone shell script. I prefere the service implementation below. It has a hard-coded path to the USB Relay, checks for successful ping and turns on the lamp (Relay on/off/on/off) and if ping timeout it turns off the lamp (Relay on/off)
+zsh for macOS. This might be sufficient for your purpose and is a stand alone shell script. I prefere the service implementation below. It has a hard-coded path to the USB Relay, checks for successful ping and turns on the lamp (Relay on/off/on/off) and if ping timeout it turns off the lamp (Relay on/off)
 #### pinglamp.py
-pinglamp.py is the main software. It first determines the path to the device and after that it checks internet connection by ping, similar as on_off_by_ping.zsh above
+Python3 for Ubuntu. pinglamp.py is the main software. It first determines the path to the device and after that it checks internet connection by ping, similar as on_off_by_ping.zsh above
 ##### installing pinglamp.py
-```sudo apt update```
-
-```sudo apt upgrade```
-
-```sudo apt install python3 python3-pip```
-
-```sudo pip3 install ping3```
-```pip install pyserial```
+```sudo apt update```  
+```sudo apt upgrade```  
+```sudo apt install python3 python3-pip```  
+```sudo pip3 install ping3```  
+```pip install pyserial```  
 
 - edit pinglamp.py with ```nano pinglamp.py``` . 
 
@@ -36,11 +33,12 @@ The service makes sure pinglamp.py starts at boot
 
 ```sudo nano /etc/systemd/system/pinglamp.service```
 
-Note that you have to customize following lines: ExecStart=/usr/bin/python3 /home/YOURUSER/pinglamp.py
-WorkingDirectory=/home/YOURUSER, 
-StandardOutput=inherit, 
-StandardError=inherit, 
-Restart=always, 
+Note that you have to customize following lines under [Service]:   
+ExecStart=/usr/bin/python3 /home/YOURUSER/pinglamp.py  
+WorkingDirectory=/home/YOURUSER,   
+StandardOutput=inherit,  
+StandardError=inherit,   
+Restart=always,  
 User=YOURUSER
 
 - Enable the service & Reboot
@@ -60,17 +58,17 @@ NOTE! If you decide to drill a hole in the lamp, don't forget to pull it through
 ![Lamp PCB](/assets/lamp_pcb.jpg)
 ![Lamp,disassembled](/assets/lamp_disassembled.jpg)
 
-## useful tool
+## useful tool(s)
 ```usb-devices```
 
 
-T:  Bus=02 Lev=01 Prnt=01 Port=00 Cnt=01 Dev#= 15 Spd=12  MxCh= 0
-D:  Ver= 1.10 Cls=ff(vend.) Sub=00 Prot=00 MxPS= 8 #Cfgs=  1
-P:  Vendor=1a86 ProdID=7523 Rev=02.64
-S:  Product=USB Serial
-C:  #Ifs= 1 Cfg#= 1 Atr=80 MxPwr=98mA
-I:  If#= 0 Alt= 0 #EPs= 3 Cls=ff(vend.) Sub=01 Prot=02 Driver=ch341
-E:  Ad=02(O) Atr=02(Bulk) MxPS=  32 Ivl=0ms
-E:  Ad=81(I) Atr=03(Int.) MxPS=   8 Ivl=1ms
-E:  Ad=82(I) Atr=02(Bulk) MxPS=  32 Ivl=0ms
+T:  Bus=02 Lev=01 Prnt=01 Port=00 Cnt=01 Dev#= 15 Spd=12  MxCh= 0  
+D:  Ver= 1.10 Cls=ff(vend.) Sub=00 Prot=00 MxPS= 8 #Cfgs=  1  
+P:  Vendor=1a86 ProdID=7523 Rev=02.64  
+S:  Product=USB Serial  
+C:  #Ifs= 1 Cfg#= 1 Atr=80 MxPwr=98mA  
+I:  If#= 0 Alt= 0 #EPs= 3 Cls=ff(vend.) Sub=01 Prot=02 Driver=ch341  
+E:  Ad=02(O) Atr=02(Bulk) MxPS=  32 Ivl=0ms  
+E:  Ad=81(I) Atr=03(Int.) MxPS=   8 Ivl=1ms  
+E:  Ad=82(I) Atr=02(Bulk) MxPS=  32 Ivl=0ms  
 
