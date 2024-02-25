@@ -1,8 +1,33 @@
+# This code is licensed under the Creative Commons CC0 1.0 Universal License.
+
 import subprocess
 import time
 
+# Function to find the device path
+def find_device_path():
+    # Run the usb-devices command to get information about USB devices
+    usb_info = subprocess.check_output(["usb-devices"]).decode("utf-8")
+    # Split the output by lines
+    lines = usb_info.split('\n')
+    # Initialize variables to store Vendor and Product IDs
+    vendor_id = None
+    product_id = None
+    # Loop through each line
+    for line in lines:
+        # Check if the line contains Vendor and Product IDs
+        if "Vendor=" in line and "ProdID=" in line:
+            # Extract Vendor and Product IDs
+            vendor_id = line.split("Vendor=")[1].split()[0]
+            product_id = line.split("ProdID=")[1].split()[0]
+            # Check if the Vendor and Product IDs match the expected values
+            if vendor_id == "1a86" and product_id == "7523":
+                # If match found, extract the device path
+                for line in lines:
+                    if "T:" in line and "Dev#=" in line:
+                        return line.split(" ")[1]
+
 # Define the device path
-DEVICE = "/dev/ttyUSB0"  # Modify this to fit your machine and your device path
+DEVICE = find_device_path()
 
 # Function to turn the lamp on
 def turn_lamp_on():
