@@ -1,4 +1,4 @@
-# This service is licensed under the Creative Commons CC0 1.0 Universal License.
+# This work is licensed under a Creative Commons Attribution 4.0 International License. http://creativecommons.org/licenses/by/4.0/
 [Unit]
 Description=PingLamp
 After=network.target
